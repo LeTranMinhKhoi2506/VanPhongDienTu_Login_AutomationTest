@@ -91,5 +91,14 @@ class LoginE2ETest(BaseTest):
         )
 
 
+    def test_tc12_internal_space_username(self):
+        """TC12: Tên tài khoản giả có khoảng trắng ở giữa."""
+        self.assert_login_rejected(
+            "selenium user " + self.unknown_username,
+            self.INVALID_PASSWORD,
+            self.INVALID_CREDENTIALS_ERROR,
+        )
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
