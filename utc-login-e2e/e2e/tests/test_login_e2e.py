@@ -134,5 +134,15 @@ class LoginE2ETest(BaseTest):
         )
 
 
+    def test_tc17_empty_username_after_rejection(self):
+        """TC17: Sau lỗi sai tài khoản, gửi lại với tên đăng nhập trống."""
+        self.assert_login_rejected(
+            self.unknown_username, self.INVALID_PASSWORD, self.INVALID_CREDENTIALS_ERROR,
+        )
+        self.assert_login_rejected(
+            "", self.INVALID_PASSWORD, "Bạn chưa nhập tên đăng nhập",
+        )
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
