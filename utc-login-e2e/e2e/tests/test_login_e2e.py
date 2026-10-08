@@ -162,5 +162,16 @@ class LoginE2ETest(BaseTest):
         )
 
 
+    def test_tc20_password_cleared_after_rejection(self):
+        """TC20: Sau đăng nhập thất bại, mật khẩu không còn trong ô nhập."""
+        self.assert_login_rejected(
+            self.unknown_username, self.INVALID_PASSWORD, self.INVALID_CREDENTIALS_ERROR,
+        )
+        self.assertEqual(
+            self.login_page.password_value(), "",
+            "Không giữ lại mật khẩu trong ô nhập sau đăng nhập thất bại",
+        )
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

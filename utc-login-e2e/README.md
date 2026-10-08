@@ -76,6 +76,7 @@ Không kiểm thử OAuth Google hoặc gửi email khôi phục mật khẩu.
 | TC17 | Sau lỗi sai tài khoản, gửi lại tên trống | Thông báo mới: Bạn chưa nhập tên đăng nhập |
 | TC18 | Sau lỗi sai tài khoản, gửi lại mật khẩu trống | Thông báo mới: Bạn chưa nhập mật khẩu |
 | TC19 | Sau lỗi bỏ trống, gửi lại tài khoản giả | Thông báo mới: Tài khoản hoặc mật khẩu không đúng. |
+| TC20 | Kiểm tra ô mật khẩu sau khi bị từ chối | Ô mật khẩu rỗng, vẫn ở trang đăng nhập |
 
 Các kỳ vọng dựa trên phản hồi thực tế của trang ngày 08/10/2026.
 Trang hiện không coi chuỗi chỉ có khoảng trắng là trường trống;

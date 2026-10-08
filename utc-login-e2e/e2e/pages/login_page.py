@@ -53,3 +53,6 @@ class LoginPage(BasePage):
             and self.visible(self.PASSWORD).is_displayed()
             and self.visible(self.SUBMIT).is_displayed()
         )
+
+    def password_value(self):
+        return self.visible(self.PASSWORD).get_property("value")
