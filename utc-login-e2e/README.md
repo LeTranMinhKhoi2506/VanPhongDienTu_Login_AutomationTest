@@ -7,7 +7,9 @@ Chỉ kiểm thử đăng nhập thất bại trên form tài khoản văn phòn
 utc-login-e2e/
 ├── requirements.txt
 ├── README.md
+├── run_tests.py             # Chạy test và tạo báo cáo HTML
 └── e2e/
+    ├── reporting.py          # Thu thập kết quả và dựng HTML
     ├── base/
     │   └── base_test.py       # WebDriver, timeout, đóng browser mỗi test
     ├── pages/
@@ -47,6 +49,50 @@ Nếu Selenium đã cài sẵn, thay `.\.venv\Scripts\python.exe` bằng `python
 Lần chạy đầu cần Internet để Selenium Manager tìm/tải WebDriver phù hợp.
 Tham khảo [Selenium Manager](https://www.selenium.dev/documentation/selenium_manager/)
 và [explicit waits](https://www.selenium.dev/documentation/webdriver/waits/).
+
+## Báo cáo HTML sau khi chạy test
+
+Từ thư mục `utc-login-e2e`, chạy:
+
+```powershell
+python run_tests.py --open
+```
+
+Lệnh chạy toàn bộ 20 test, tạo `artifacts/report.html` và mở báo cáo bằng
+trình duyệt mặc định. Nếu dùng `.venv`, thay `python` bằng
+`.\.venv\Scripts\python.exe`. Để nhìn thấy Chrome thao tác trong lúc chạy:
+
+```powershell
+$env:HEADLESS = "0"
+$env:BROWSER = "chrome"
+python run_tests.py --open
+```
+
+Chỉ chạy một test và xuất báo cáo:
+
+```powershell
+python run_tests.py --test e2e.tests.test_login_e2e.LoginE2ETest.test_tc01_both_fields_empty --open
+```
+
+Mỗi lần chạy sẽ ghi đè `artifacts/report.html`. Muốn lưu riêng từng lần:
+
+```powershell
+python run_tests.py --report artifacts/report-01.html --open
+```
+
+Báo cáo có tổng hợp PASS/FAIL/ERROR/SKIP, thời gian từng test, tìm kiếm,
+lọc trạng thái và chi tiết lỗi có thể mở rộng. Giờ hiển thị theo UTC+7.
+PASS nghĩa là test xác nhận đăng nhập thất bại đúng kỳ vọng.
+File HTML chứa sẵn nội dung, không cần server hoặc Internet để xem.
+Thư mục `artifacts/` được Git bỏ qua.
+
+Runner vẫn tạo báo cáo khi test FAIL hoặc ERROR và trả mã thoát `1`;
+chạy thành công trả mã `0`. Lệnh `python -m unittest ...` cũ vẫn dùng được,
+nhưng không tự tạo báo cáo. Kiểm tra riêng chức năng báo cáo (không Selenium):
+
+```powershell
+python -m unittest discover -s verification -v
+```
 
 ## Test cases
 
