@@ -66,6 +66,7 @@ Không kiểm thử OAuth Google hoặc gửi email khôi phục mật khẩu.
 | TC07 | Gửi tài khoản giả bằng phím Enter | Tài khoản hoặc mật khẩu không đúng. |
 | TC08 | Bật giữ đăng nhập với tài khoản giả | Tài khoản hoặc mật khẩu không đúng. |
 | TC09 | Tên đăng nhập giả có Unicode | Tài khoản hoặc mật khẩu không đúng. |
+| TC10 | Email UTC giả trong form thường | Tài khoản hoặc mật khẩu không đúng. |
 
 Các kỳ vọng dựa trên phản hồi thực tế của trang ngày 08/10/2026.
 Trang hiện không coi chuỗi chỉ có khoảng trắng là trường trống;

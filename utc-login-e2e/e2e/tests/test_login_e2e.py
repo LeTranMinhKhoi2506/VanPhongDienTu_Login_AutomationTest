@@ -73,5 +73,14 @@ class LoginE2ETest(BaseTest):
         )
 
 
+    def test_tc10_utc_email_username(self):
+        """TC10: Dùng email UTC giả trong form tài khoản văn phòng điện tử."""
+        self.assert_login_rejected(
+            self.unknown_username + "@st.utc2.edu.vn",
+            self.INVALID_PASSWORD,
+            self.INVALID_CREDENTIALS_ERROR,
+        )
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
