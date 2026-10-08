@@ -34,5 +34,10 @@ class LoginE2ETest(BaseTest):
         self.assert_login_rejected("", self.INVALID_PASSWORD, "Bạn chưa nhập tên đăng nhập")
 
 
+    def test_tc03_password_empty(self):
+        """TC03: Có tên tài khoản giả, bỏ trống mật khẩu."""
+        self.assert_login_rejected(self.unknown_username, "", "Bạn chưa nhập mật khẩu")
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
