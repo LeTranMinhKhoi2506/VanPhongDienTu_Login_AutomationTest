@@ -109,5 +109,14 @@ class LoginE2ETest(BaseTest):
         )
 
 
+    def test_tc14_unicode_password(self):
+        """TC14: Mật khẩu Unicode với tài khoản không tồn tại."""
+        self.assert_login_rejected(
+            self.unknown_username,
+            "Mật_khẩu_không_hợp_lệ_🔒123",
+            self.INVALID_CREDENTIALS_ERROR,
+        )
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
