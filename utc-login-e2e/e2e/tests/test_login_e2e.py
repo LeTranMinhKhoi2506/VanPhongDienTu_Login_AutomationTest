@@ -127,5 +127,12 @@ class LoginE2ETest(BaseTest):
         )
 
 
+    def test_tc16_long_password(self):
+        """TC16: Mật khẩu dài 256 ký tự với tài khoản giả."""
+        self.assert_login_rejected(
+            self.unknown_username, "p" * 256, self.INVALID_CREDENTIALS_ERROR,
+        )
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
