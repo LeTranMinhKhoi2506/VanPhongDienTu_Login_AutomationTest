@@ -58,6 +58,7 @@ Không kiểm thử OAuth Google hoặc gửi email khôi phục mật khẩu.
 | ID | Tình huống | Kết quả mong đợi |
 | --- | --- | --- |
 | TC01 | Cả hai trường trống | Bạn chưa nhập tên đăng nhập |
+| TC02 | Tên đăng nhập trống, có mật khẩu | Bạn chưa nhập tên đăng nhập |
 
 Các kỳ vọng dựa trên phản hồi thực tế của trang ngày 08/10/2026.
 Trang hiện không coi chuỗi chỉ có khoảng trắng là trường trống;
