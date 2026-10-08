@@ -54,5 +54,10 @@ class LoginE2ETest(BaseTest):
         self.assert_login_rejected(self.unknown_username, "   ", self.INVALID_CREDENTIALS_ERROR)
 
 
+    def test_tc07_invalid_login_via_enter(self):
+        """TC07: Nhấn Enter trong ô mật khẩu để gửi thông tin sai."""
+        self.assert_login_rejected(self.unknown_username, self.INVALID_PASSWORD, self.INVALID_CREDENTIALS_ERROR, via_enter=True)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
