@@ -39,5 +39,10 @@ class LoginE2ETest(BaseTest):
         self.assert_login_rejected(self.unknown_username, "", "Bạn chưa nhập mật khẩu")
 
 
+    def test_tc04_unknown_account(self):
+        """TC04: Tài khoản giả và mật khẩu không hợp lệ."""
+        self.assert_login_rejected(self.unknown_username, self.INVALID_PASSWORD, self.INVALID_CREDENTIALS_ERROR)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
