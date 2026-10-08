@@ -82,5 +82,14 @@ class LoginE2ETest(BaseTest):
         )
 
 
+    def test_tc11_padded_username(self):
+        """TC11: Tên tài khoản giả có khoảng trắng ở đầu và cuối."""
+        self.assert_login_rejected(
+            "  " + self.unknown_username + "  ",
+            self.INVALID_PASSWORD,
+            self.INVALID_CREDENTIALS_ERROR,
+        )
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
