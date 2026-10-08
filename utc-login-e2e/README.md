@@ -61,6 +61,7 @@ Không kiểm thử OAuth Google hoặc gửi email khôi phục mật khẩu.
 | TC02 | Tên đăng nhập trống, có mật khẩu | Bạn chưa nhập tên đăng nhập |
 | TC03 | Có tên tài khoản giả, mật khẩu trống | Bạn chưa nhập mật khẩu |
 | TC04 | Tài khoản giả và mật khẩu sai | Tài khoản hoặc mật khẩu không đúng. |
+| TC05 | Tên đăng nhập là ba khoảng trắng | Tài khoản hoặc mật khẩu không đúng. |
 
 Các kỳ vọng dựa trên phản hồi thực tế của trang ngày 08/10/2026.
 Trang hiện không coi chuỗi chỉ có khoảng trắng là trường trống;

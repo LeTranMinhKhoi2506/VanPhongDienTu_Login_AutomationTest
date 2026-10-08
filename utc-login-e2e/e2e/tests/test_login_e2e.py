@@ -44,5 +44,10 @@ class LoginE2ETest(BaseTest):
         self.assert_login_rejected(self.unknown_username, self.INVALID_PASSWORD, self.INVALID_CREDENTIALS_ERROR)
 
 
+    def test_tc05_whitespace_username(self):
+        """TC05: Tên đăng nhập chỉ gồm khoảng trắng."""
+        self.assert_login_rejected("   ", self.INVALID_PASSWORD, self.INVALID_CREDENTIALS_ERROR)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
