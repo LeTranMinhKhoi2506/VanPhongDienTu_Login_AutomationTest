@@ -64,5 +64,14 @@ class LoginE2ETest(BaseTest):
         self.assert_login_rejected(self.unknown_username, self.INVALID_PASSWORD, self.INVALID_CREDENTIALS_ERROR, remember=True)
 
 
+    def test_tc09_unicode_username(self):
+        """TC09: Tên đăng nhập giả chứa chữ tiếng Việt có dấu."""
+        self.assert_login_rejected(
+            "tài_khoản_" + self.unknown_username,
+            self.INVALID_PASSWORD,
+            self.INVALID_CREDENTIALS_ERROR,
+        )
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

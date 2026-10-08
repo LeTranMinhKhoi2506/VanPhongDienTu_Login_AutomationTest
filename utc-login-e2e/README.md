@@ -65,10 +65,16 @@ Không kiểm thử OAuth Google hoặc gửi email khôi phục mật khẩu.
 | TC06 | Mật khẩu là ba khoảng trắng, tài khoản giả | Tài khoản hoặc mật khẩu không đúng. |
 | TC07 | Gửi tài khoản giả bằng phím Enter | Tài khoản hoặc mật khẩu không đúng. |
 | TC08 | Bật giữ đăng nhập với tài khoản giả | Tài khoản hoặc mật khẩu không đúng. |
+| TC09 | Tên đăng nhập giả có Unicode | Tài khoản hoặc mật khẩu không đúng. |
 
 Các kỳ vọng dựa trên phản hồi thực tế của trang ngày 08/10/2026.
 Trang hiện không coi chuỗi chỉ có khoảng trắng là trường trống;
 các tình huống đó được kiểm tra theo phản hồi từ chối thông tin đăng nhập.
+Các test Unicode, email, khoảng trắng và dữ liệu dài dùng tài khoản giả để
+kiểm tra hệ thống từ chối và vẫn hiển thị form. Chúng không chứng minh
+quy tắc chuẩn hóa tên đăng nhập hoặc giới hạn độ dài của tài khoản hợp lệ.
+TC17–TC19 kiểm tra thông báo mới sau khi gửi lại form; TC20 kiểm tra ô
+mật khẩu được xóa sau khi bị từ chối.
 Lỗi kết nối, timeout hoặc WebDriver là lỗi thực thi test, không tính là PASS.
 
 ## Commit
