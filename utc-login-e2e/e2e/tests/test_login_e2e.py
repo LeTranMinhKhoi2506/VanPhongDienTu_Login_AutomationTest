@@ -154,5 +154,13 @@ class LoginE2ETest(BaseTest):
         )
 
 
+    def test_tc19_invalid_account_after_validation_error(self):
+        """TC19: Sau lỗi bỏ trống, nhập tài khoản giả rồi gửi lại."""
+        self.assert_login_rejected("", "", "Bạn chưa nhập tên đăng nhập")
+        self.assert_login_rejected(
+            self.unknown_username, self.INVALID_PASSWORD, self.INVALID_CREDENTIALS_ERROR,
+        )
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
