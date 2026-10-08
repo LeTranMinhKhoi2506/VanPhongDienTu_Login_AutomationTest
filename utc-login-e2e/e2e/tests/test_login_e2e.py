@@ -118,5 +118,14 @@ class LoginE2ETest(BaseTest):
         )
 
 
+    def test_tc15_long_username(self):
+        """TC15: Tên đăng nhập giả dài đúng 256 ký tự."""
+        username = "u" * (256 - len(self.unknown_username)) + self.unknown_username
+        self.assertEqual(len(username), 256)
+        self.assert_login_rejected(
+            username, self.INVALID_PASSWORD, self.INVALID_CREDENTIALS_ERROR,
+        )
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

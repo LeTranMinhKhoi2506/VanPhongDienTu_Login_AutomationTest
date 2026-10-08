@@ -71,6 +71,7 @@ Không kiểm thử OAuth Google hoặc gửi email khôi phục mật khẩu.
 | TC12 | Tên tài khoản giả có khoảng trắng ở giữa | Tài khoản hoặc mật khẩu không đúng. |
 | TC13 | Tên tài khoản giả có ký tự đặc biệt | Tài khoản hoặc mật khẩu không đúng. |
 | TC14 | Mật khẩu Unicode với tài khoản giả | Tài khoản hoặc mật khẩu không đúng. |
+| TC15 | Tên đăng nhập giả dài 256 ký tự | Tài khoản hoặc mật khẩu không đúng. |
 
 Các kỳ vọng dựa trên phản hồi thực tế của trang ngày 08/10/2026.
 Trang hiện không coi chuỗi chỉ có khoảng trắng là trường trống;
