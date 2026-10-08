@@ -59,5 +59,10 @@ class LoginE2ETest(BaseTest):
         self.assert_login_rejected(self.unknown_username, self.INVALID_PASSWORD, self.INVALID_CREDENTIALS_ERROR, via_enter=True)
 
 
+    def test_tc08_invalid_login_with_remember(self):
+        """TC08: Bật giữ đăng nhập rồi gửi thông tin tài khoản giả."""
+        self.assert_login_rejected(self.unknown_username, self.INVALID_PASSWORD, self.INVALID_CREDENTIALS_ERROR, remember=True)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
