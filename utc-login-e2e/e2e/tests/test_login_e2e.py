@@ -100,5 +100,14 @@ class LoginE2ETest(BaseTest):
         )
 
 
+    def test_tc13_special_characters_username(self):
+        """TC13: Tên đăng nhập giả chứa ký tự đặc biệt."""
+        self.assert_login_rejected(
+            "!@#$%_" + self.unknown_username,
+            self.INVALID_PASSWORD,
+            self.INVALID_CREDENTIALS_ERROR,
+        )
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
