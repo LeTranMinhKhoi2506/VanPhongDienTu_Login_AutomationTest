@@ -74,6 +74,7 @@ Không kiểm thử OAuth Google hoặc gửi email khôi phục mật khẩu.
 | TC15 | Tên đăng nhập giả dài 256 ký tự | Tài khoản hoặc mật khẩu không đúng. |
 | TC16 | Mật khẩu dài 256 ký tự với tài khoản giả | Tài khoản hoặc mật khẩu không đúng. |
 | TC17 | Sau lỗi sai tài khoản, gửi lại tên trống | Thông báo mới: Bạn chưa nhập tên đăng nhập |
+| TC18 | Sau lỗi sai tài khoản, gửi lại mật khẩu trống | Thông báo mới: Bạn chưa nhập mật khẩu |
 
 Các kỳ vọng dựa trên phản hồi thực tế của trang ngày 08/10/2026.
 Trang hiện không coi chuỗi chỉ có khoảng trắng là trường trống;
